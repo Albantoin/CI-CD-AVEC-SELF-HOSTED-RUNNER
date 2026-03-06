@@ -4,18 +4,16 @@ on:
     branches: [ main ]
 jobs:
   deploy:
-    [cite_start]runs-on: self-hosted [cite: 287]
+    runs-on: self-hosted
     steps:
       - name: Récupération du code
-        [cite_start]uses: actions/checkout@v4 [cite: 290]
-
+        uses: actions/checkout@v4
       - name: Installation nginx
         run: |
           sudo apt update
           sudo apt install -y nginx
           sudo mkdir -p /var/www/site
-          sudo chown -R www-data:www-data /var/www/site [cite: 296]
-
+          sudo chown -R www-data:www-data /var/www/site
       - name: Configuration nginx
         run: |
           sudo tee /etc/nginx/sites-available/site > /dev/null <<EOF
@@ -33,9 +31,8 @@ jobs:
           sudo rm -f /etc/nginx/sites-enabled/default
           sudo nginx -t
           sudo cp index.html /var/www/site/index.html
-          sudo chown www-data:www-data /var/www/site/index.html [cite: 314]
-
+          sudo chown www-data:www-data /var/www/site/index.html
       - name: Redémarrage nginx
         run: |
           sudo systemctl enable nginx
-          sudo systemctl restart nginx [cite: 318]
+          sudo systemctl restart nginx
