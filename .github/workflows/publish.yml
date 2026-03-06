@@ -1,7 +1,7 @@
 name:Installation et Publication de l'application
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   deploy:
     runs-on: self-hosted
