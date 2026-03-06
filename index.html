@@ -19,7 +19,7 @@
     <!-- En-tête -->
     <header class="bg-slate-900 text-white py-12">
         <div class="max-w-5xl mx-auto px-6">
-            <h1 class="text-4xl font-bold mb-4">Mise en place d'un Self-Hosted Runner & Déploiement Web</h1>
+            <h1 class="text-4xl font-bold mb-4">Mise en place d'un Self-Hosted Runner &amp; Déploiement Web</h1>
             <p class="text-xl text-slate-300">Rapport de Travaux Pratiques - CI/CD GitHub Actions</p>
             <div class="mt-6 flex items-center space-x-4">
                 <span class="bg-blue-600 text-sm px-3 py-1 rounded-full font-semibold">DevOps</span>
@@ -80,12 +80,11 @@
 
         <!-- Code Source -->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-slate-800">3. Fichiers & Workflows</h2>
+            <h2 class="text-2xl font-bold mb-6 text-slate-800">3. Fichiers &amp; Workflows</h2>
 
             <!-- Fichier 1 -->
             <div class="mb-8">
                 <h4 class="font-semibold text-lg flex items-center gap-2">
-                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
                     index.html (La page web)
                 </h4>
                 <div class="code-block">
@@ -106,7 +105,6 @@
             <!-- Fichier 2 -->
             <div class="mb-8">
                 <h4 class="font-semibold text-lg flex items-center gap-2">
-                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
                     test.yml (Test du Runner)
                 </h4>
                 <div class="code-block">
@@ -133,7 +131,6 @@ jobs:
             <!-- Fichier 3 -->
             <div class="mb-8">
                 <h4 class="font-semibold text-lg flex items-center gap-2">
-                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
                     verif.yml (Vérification CI)
                 </h4>
                 <div class="code-block">
@@ -148,7 +145,7 @@ jobs:
       - name: Récupération du code
         uses: actions/checkout@v4
       - name: Installation du validateur HTML (Tidy)
-        run: sudo apt-get update && sudo apt-get install -y tidy
+        run: sudo apt-get update &amp;&amp; sudo apt-get install -y tidy
       - name: Vérification syntaxe HTML
         run: tidy -q -e index.html</code></pre>
                 </div>
@@ -157,7 +154,6 @@ jobs:
             <!-- Fichier 4 -->
             <div class="mb-8">
                 <h4 class="font-semibold text-lg flex items-center gap-2">
-                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
                     publish.yml (Déploiement Nginx)
                 </h4>
                 <div class="code-block">
@@ -179,7 +175,7 @@ jobs:
           sudo chown -R www-data:www-data /var/www/site
       - name: Configuration nginx
         run: |
-          sudo tee /etc/nginx/sites-available/site > /dev/null <<EOF
+          sudo tee /etc/nginx/sites-available/site &gt; /dev/null &lt;&lt;EOF
           server {
             listen 80;
             server_name _;
@@ -208,20 +204,8 @@ jobs:
             <h2 class="text-2xl font-bold mb-4">4. Résultats Obtenus</h2>
             <p class="mb-6 text-slate-300">
                 La mise en place de la chaîne d'intégration et de déploiement continu est opérationnelle. 
-                Le code poussé sur le dépôt est intercepté, analysé, et déployé sur le serveur Nginx local automatiquement en quelques secondes.
+                Le code poussé sur le dépôt est intercepté, analysé, et déployé sur le serveur Nginx local automatiquement.
             </p>
-            <div class="inline-block border-2 border-dashed border-slate-600 rounded-lg p-8 bg-slate-800 w-full max-w-2xl mx-auto">
-                <p class="text-slate-400 italic mb-2">[Image de la Capture d'écran du Navigateur]</p>
-                <p class="text-sm text-slate-500">Insérez ici la capture d'écran prouvant l'accès à la page web via l'IP du serveur.</p>
-            </div>
-            
-            <div class="mt-8">
-                <a href="#" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                    Voir le dépôt GitHub
-                </a>
-                <p class="text-sm mt-2 text-slate-400">(Remplacez le lien # par l'URL de votre repo)</p>
-            </div>
         </section>
 
     </main>
