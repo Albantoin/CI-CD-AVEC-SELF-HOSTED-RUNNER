@@ -1,4 +1,4 @@
-name: Installation et Publication de l'application
+name:Installation et Publication de l'application
 on:
   push:
     branches: [ main ]
